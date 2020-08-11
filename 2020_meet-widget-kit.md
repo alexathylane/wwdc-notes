@@ -1,10 +1,12 @@
+
+
 # Meet Widget Kit
 
 ## What makes a great widget?
 
 #### Glanceable
 
-<img src="/Users/andrew.rohn/Library/Application Support/typora-user-images/image-20200810151542900.png" alt="image-20200810151542900" style="zoom: 33%;" />
+<img src="/Users/andrew.rohn/Code/wwdc-notes/glanceable-widget-examples.png" alt="image-20200810151542900" style="zoom: 33%;" />
 
 #### Relevant
 
@@ -16,8 +18,6 @@ You can have 3 different sizes: small, medium, or large. You're not required to 
 
 All the configuration options for your widget are built using intents. WidgetKit creates the entire configuration UI from your intents.
 
-<img src="/Users/andrew.rohn/Movies/Kaptures/weather-widget-configuration.gif" alt="weather-widget-configuration" style="zoom:67%;" />
-
 ### How to create a great widget (07:30)
 
 #### Configuration
@@ -27,23 +27,25 @@ The widget extension template provides an initial widget implementation that con
 - [`StaticConfiguration`](https://developer.apple.com/documentation/widgetkit/staticconfiguration): For a widget with no user-configurable properties. For example, a stock market widget that shows general market information, or a news widget that shows trending headlines.
 - [`IntentConfiguration`](https://developer.apple.com/documentation/widgetkit/intentconfiguration): For a widget with user-configurable properties. You use a SiriKit custom intent to define the properties. For example, a weather widget that needs a zip or postal code for a city, or a package tracking widget that needs a tracking number.
 
+<img src="/Users/andrew.rohn/Code/wwdc-notes/weather-widget-configuration.gif" alt="weather-widget-configuration" style="zoom:67%;" />
+
 #### supportedFamilies
 
 small, medium, large
 
-<img src="/Users/andrew.rohn/Movies/Kaptures/widget-families-sizes.gif" alt="Widget family sizes on iOS & MacOS" style="zoom:67%;" />
+<img src="/Users/andrew.rohn/Code/wwdc-notes/widget-families-sizes.gif" alt="widget-families-sizes" style="zoom:67%;" />
 
 #### placeholder
 
 Each widget must provide a placeholder UI. This is the default content of your widget. There should be no user data. The UI is retrieved sparingly and there's no guarantees when that might occur.
 
-<img src="/Users/andrew.rohn/Library/Application Support/typora-user-images/image-20200810160623515.png" alt="Example placeholder UI" style="zoom:33%;" />
+<img src="/Users/andrew.rohn/Code/wwdc-notes/placeholder-examples.png" alt="Example placeholder UI" style="zoom:33%;" />
 
 #### SampleWidget code (11:00)
 
 This is how you setup the engine of our widget.
 
-![image-20200810160705463](/Users/andrew.rohn/Library/Application Support/typora-user-images/image-20200810160705463.png)
+<img src="/Users/andrew.rohn/Code/wwdc-notes/widget-setup-code.png" alt="image-20200810160705463" style="zoom:50%;" />
 
 #### Deep links (12:20)
 
@@ -67,7 +69,7 @@ In medium & large sizes, multiple sub-links can be used via the `Link` API in Sw
 
 Returning a timeline is how we drive the widget experience. When a WidgetKit extension returns an entry, we take that info and serialize the view hierarchy to disc. This means we just-in-time render each individual entry.
 
-<img src="/Users/andrew.rohn/Library/Application Support/typora-user-images/image-20200810161642451.png" alt="Timeline view rendering" style="zoom: 33%;" />
+<img src="/Users/andrew.rohn/Code/wwdc-notes/widget-timeline.png" alt="Timeline view rendering" style="zoom: 33%;" />
 
 #### Reloads (14:56)
 
@@ -75,7 +77,7 @@ There are times when your widget needs to return more up-to-date information. We
 
 There are many ways to drive reloads to keep your widget up-to-date: networking, timeline, app-based.
 
-<img src="/Users/andrew.rohn/Library/Application Support/typora-user-images/image-20200810162403112.png" alt="Reload via network, timeline, or app-based" style="zoom:33%;" />
+<img src="/Users/andrew.rohn/Code/wwdc-notes/reload-sources.png" alt="Reload via network, timeline, or app-based" style="zoom:33%;" />
 
 
 
